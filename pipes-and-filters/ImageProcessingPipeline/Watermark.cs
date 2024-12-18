@@ -5,6 +5,7 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Processing;
+using System.IO;
 
 namespace ImageProcessingPipeline
 {
@@ -25,9 +26,9 @@ namespace ImageProcessingPipeline
             // Download image and watermark it
             using BlobDownloadStreamingResult imageBlobContents = await imageBlob.DownloadStreamingAsync(null, cancellationToken);
             var image = await Image.LoadAsync(imageBlobContents.Content, cancellationToken);
-            
-            using var watermarkStream = _files.GetFileInfo("resources/watermark.png").CreateReadStream();
-            var watermarkImage = await Image.LoadAsync(watermarkStream, cancellationToken);
+
+            var stream = new FileStream("resources/watermark.png", FileMode.Open, FileAccess.Read, FileShare.Read, 4096, true);
+            var watermarkImage = await Image.LoadAsync(stream, cancellationToken);
 
             image.Mutate(i =>
             {
