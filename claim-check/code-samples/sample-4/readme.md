@@ -85,7 +85,7 @@ Install the prerequisites and follow the steps to deploy and run the examples.
 
    > This project uses the [.NET isolated worker model](https://learn.microsoft.com/azure/azure-functions/dotnet-isolated-process-guide). Starting with `Microsoft.Azure.Functions.Worker.Sdk` 2.0.0, use `dotnet run` instead of `func start` to ensure function extensions are loaded correctly from the build output directory.
 
-  > Please note: For demo purposes, the sample application will write the payload content to the the screen. Keep that in mind before you try sending really large payloads.
+  > Please note: For demo purposes, the sample application will write the payload content to the screen. Keep that in mind before you try sending really large payloads.
 
 ### :checkered_flag: Try it out
 
