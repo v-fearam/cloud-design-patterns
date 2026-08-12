@@ -83,7 +83,7 @@ Install the prerequisites and follow the steps to deploy and run the examples.
    dotnet run
    ```
 
-  > Please note: For demo purposes, the sample application will write the payload content to the screen. Keep that in mind before you try sending really large payloads.
+   > Please note: For demo purposes, the sample application will write the payload content to the screen. Keep that in mind before you try sending really large payloads.
 
 ### :checkered_flag: Try it out
 
